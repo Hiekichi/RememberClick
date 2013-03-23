@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.hiekichi.sample.marubatsu;
+package jp.ac.iwasaki.isc.event2013;
 
 public final class R {
     public static final class attr {

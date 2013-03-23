@@ -135,11 +135,10 @@ public class RCView extends SurfaceView implements SurfaceHolder.Callback {
 				}
 				// 正しい升目をクリックできなかった場合
 				else {
-					for (int x = 0; x < mMasuSizeX; ++x) { // 升目の表示をすべて×にする
-						for(int y = 0; y < mMasuSizeY; ++y) {
-							mMasu[x][y].setValue( 2 );
-						}
-					}
+					// いま押した升目の表示を×にする
+					mMasu[ clickX ][ clickY ].setValue( 2 );
+					// 次に押すべきだった升目の表示を○にする
+					mMasu[ mRirekiX[mTekazuIma] ][ mRirekiY[mTekazuIma] ].setValue( 1 );
 					repaint(getHolder()); // 再描画を指示
 					mTekazuMax = mTekazuIma = 200; // 初手に戻す布石
 				}
